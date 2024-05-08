@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 const http = axios.create({
     baseURL: 'http://localhost:8000/api',
 });
@@ -24,14 +23,16 @@ async function getOneCharacter(id) {
             throw err;
         })
 }
-function deleteHandler(id) {
+function deleteHandler(id, navigate) {
     http.delete(`/myCharacters/${id}`)
-        .then(res => res.data)
+        .then((res) => {
+            navigate('/')
+        })
         .catch((err) => {
             throw err
         })
 }
-async function createCharacter(newCharacter) {
+async function createCharacter(newCharacter, navigate) {
     http.post(`/myCharacters`, newCharacter)
         .then((res) => {
             navigate('/')
@@ -45,5 +46,6 @@ export {
     getAllCharacters,
     updateOneCharacter,
     getOneCharacter,
-    createCharacter
+    createCharacter,
+    deleteHandler
 }

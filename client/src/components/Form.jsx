@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { createCharacter, getOneCharacter, updateOneCharacter } from '../services/CharacterService.jsx';
 import { useNavigate, useParams } from 'react-router-dom';
+import characterData from '../FireEmblemData/Characters.js';
+import classData from '../FireEmblemData/Classes.js';
 import {
     nameHandler, classHandler, levelHandler, internalLevelHandler,
     hpHandler, strHandler, defHandler, magHandler, resHandler, dexHandler,
@@ -10,6 +12,8 @@ const Form = (props) => {
     let { page } = props;
     const { id } = useParams();
     const navigate = useNavigate();
+    const unitData = characterData;
+    const unitClassData = classData;
     const [errors, setErrors] = useState({})
     let [formErrors, setFormErrors] = useState({
         name: "Character name is required",
@@ -131,16 +135,34 @@ const Form = (props) => {
     }
     return (
         <>
-            <form className='w-50 mx-auto'
+            <form className='w-50 mx-auto text-white'
                 onSubmit={submitHandler}
             >
                 <div>
-                    <label className='form-label'>Unit's Name: </label>
-                    <input className='form-control'
+                    <br />
+                    <label className='form-label'>Unit's Name:  </label>
+                    {<select
+                        name="name"
+                        id="name"
+                        defaultValue={"pick"}
+                        onChange={(e) => nameHandler(e, setFormErrors, formErrors, setName)}>
+                        <option value="pick" disabled>
+                            --Select Name--
+                        </option>
+                        {
+                            unitData.map((character, index) => (
+                                <option key={index} value={character.name}>
+                                    {character.name}
+                                </option>
+                            ))
+                        }
+                    </select>}
+
+                    {/* {<input className='form-control'
                         type="text"
                         onChange={(e) => nameHandler(e, setFormErrors, formErrors, setName)}
                         value={name}
-                    />
+                    />} */}
                     {
                         formErrors ?
                             <p className='text-danger'>{formErrors.name}</p>
@@ -155,12 +177,28 @@ const Form = (props) => {
                     }
                 </div>
                 <div>
-                    <label className='form-label'>Class: </label>
-                    <input className='form-control'
+                    <label className='form-label'>Class:  </label>
+                    {/* <input className='form-control'
                         type="text"
                         onChange={(e) => classHandler(e, setFormErrors, formErrors, setCharClass)}
                         value={charClass}
-                    />
+                    /> */}
+                    {<select
+                        name="class"
+                        id="class"
+                        defaultValue={"pick"}
+                        onChange={(e) => classHandler(e, setFormErrors, formErrors, setName)}>
+                        <option value="pick" disabled>
+                            --Select Name--
+                        </option>
+                        {
+                            unitClassData.map((classData, index) => (
+                                <option key={index} value={classData.name}>
+                                    {classData.name}
+                                </option>
+                            ))
+                        }
+                    </select>}
                     {
                         formErrors ?
                             <p className='text-danger'>{formErrors.charClass}</p>
@@ -208,25 +246,6 @@ const Form = (props) => {
                     {
                         errors.internalLevel ?
                             <p className='text-danger'>{errors.internalLevel.message}</p>
-                            :
-                            null
-                    }
-                </div>
-                <div>
-                    <label className='form-label'>Gender: {isMale ? "Male" : "Female"}</label>
-                    <input className='form-control'
-                        type="checkbox"
-                        onChange={() => setIsMale(!isMale)}
-                        checked={isMale} />
-                    {
-                        formErrors ?
-                            <p className='text-danger'>{formErrors.isMale}</p>
-                            :
-                            null
-                    }
-                    {
-                        errors.isMale ?
-                            <p className='text-danger'>{errors.isMale.message}</p>
                             :
                             null
                     }
@@ -379,6 +398,26 @@ const Form = (props) => {
                     {
                         errors.spd ?
                             <p className='text-danger'>{errors.spd.message}</p>
+                            :
+                            null
+                    }
+                </div>
+                <div>
+                    <label className='form-label'>Gender: {isMale ? "Male" : "Female"}</label>
+                    <input className='form-control'
+                        class='w-30'
+                        type="checkbox"
+                        onChange={() => setIsMale(!isMale)}
+                        checked={isMale} />
+                    {
+                        formErrors ?
+                            <p className='text-danger'>{formErrors.isMale}</p>
+                            :
+                            null
+                    }
+                    {
+                        errors.isMale ?
+                            <p className='text-danger'>{errors.isMale.message}</p>
                             :
                             null
                     }

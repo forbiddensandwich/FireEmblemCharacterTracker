@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
-        <>
+        <div className='bg-dark'>
             <Nav title={'Home'} />
             <CharacterTable />
-            <Link to={'/create'}>Create a character</Link>
-        </>
+            <Link className='btn btn-secondary' to={'/create'}>Create a character</Link>
+        </ div>
     )
 }
 

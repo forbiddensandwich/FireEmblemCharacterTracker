@@ -13,10 +13,10 @@ const CharacterTable = () => {
             .catch((err) => {
                 console.log(err);
             }, [])
-    })
+    })    
     return (
         <div className='d-flex flex-column'>
-            <table className='table table-dark'>
+            <table class='table table-striped table-dark'>
                 <thead>
                     <tr>
                         <td>Name: </td>
@@ -53,8 +53,8 @@ const CharacterTable = () => {
                                 <td>{character.internalLevel}</td>
                                 <td>{character.level}</td>
                                 <td>{character.isMale ? "Male" : "Female"}</td>
-                                <td><Link to={`character/${character._id}/details`}>More Info</Link></td>
-                                <td><Link to={`character/${character._id}/edit`}>Edit {character.name}</Link></td>
+                                <td><Link className='btn btn-secondary text-white' to={`character/${character._id}/details`}>More Info</Link></td>
+                                <td><Link className='btn btn-secondary text-white' to={`character/${character._id}/edit`}>Edit {character.name}</Link></td>
                             </tr>
                         ))
                     }
