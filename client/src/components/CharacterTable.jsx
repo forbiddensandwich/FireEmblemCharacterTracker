@@ -16,7 +16,7 @@ const CharacterTable = () => {
     })    
     return (
         <div className='d-flex flex-column'>
-            <table class='table table-striped table-dark'>
+            <table className='table table-striped table-dark'>
                 <thead>
                     <tr>
                         <td>Name: </td>

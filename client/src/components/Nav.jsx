@@ -4,7 +4,7 @@ const Nav = (props) => {
     return (
         <header>
             <nav className='d-flex justify-content-around border bg-dark text-white'>
-                <div class='left'>
+                <div className='left'>
                     <h1>{title}</h1>
                 </div>
             </nav>

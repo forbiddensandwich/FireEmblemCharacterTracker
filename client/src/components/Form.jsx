@@ -1,23 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { createCharacter, getOneCharacter, updateOneCharacter } from '../services/CharacterService.jsx';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import characterData from '../FireEmblemData/Characters.js';
 import classData from '../FireEmblemData/Classes.js';
 import {
-    nameHandler, classHandler, levelHandler, internalLevelHandler,
-    hpHandler, strHandler, defHandler, magHandler, resHandler, dexHandler,
-    luckHandler, spdHandler
+    // nameHandler, classHandler, levelHandler, internalLevelHandler,
+    // hpHandler, strHandler, defHandler, magHandler, resHandler, dexHandler,
+    // luckHandler, spdHandler,
+    changeHandler
+    //, characterInstance, setCharacterInstance, formErrors, setFormErrors
 } from '../functions/FormFunctions.jsx';
+import { useNavigate } from "react-router-dom"
 const Form = (props) => {
     let { page } = props;
-    const { id } = useParams();
     const navigate = useNavigate();
+    const { id } = useParams();
     const unitData = characterData;
     const unitClassData = classData;
-    const [errors, setErrors] = useState({})
-    let [formErrors, setFormErrors] = useState({
+    const [errors, setErrors] = useState({});
+    const [formErrors, setFormErrors] = useState({
         name: "Character name is required",
-        charClass: "Class is required",
+        class: "Class is required",
         hp: "HP stat is required",
         str: "Str stat is required",
         def: "Def stat is required",
@@ -28,54 +31,42 @@ const Form = (props) => {
         spd: "Speed stat is required",
         internalLevel: "Internal Level is required",
         level: "Level is required"
+    });
+    const [characterInstance, setCharacterInstance] = useState({
+        name: "",
+        class: "",
+        level: 1,
+        internalLevel: 1,
+        hp: 0,
+        str: 0,
+        mag: 0,
+        dex: 0,
+        spd: 0,
+        def: 0,
+        res: 0,
+        lck: 0,
+        isMale: true
     })
 
-    const [name, setName] = useState("")
-    const [charClass, setCharClass] = useState("")
-    const [isMale, setIsMale] = useState(true)
-    const [level, setLevel] = useState(0)
-    const [internalLevel, setInternalLevel] = useState(0)
-    const [hp, setHP] = useState(0)
-    const [str, setStr] = useState(0)
-    const [def, setDef] = useState(0)
-    const [mag, setMag] = useState(0)
-    const [res, setRes] = useState(0)
-    const [dex, setDex] = useState(0)
-    const [luck, setLuck] = useState(0)
-    const [spd, setSpd] = useState(0)
-
     if (page == 'edit') {
-        [formErrors, setFormErrors] = useState({
-            name: "",
-            charClass: "",
-            hp: "",
-            str: "",
-            def: "",
-            mag: "",
-            res: "",
-            dex: "",
-            luck: "",
-            spd: "",
-            internalLevel: "",
-            level: ""
-        })
         useEffect(() => {
             getOneCharacter(id)
                 .then((res) => {
                     console.log(res);
-                    setName(res.name);
-                    setCharClass(res.class);
-                    setIsMale(res.isMale);
-                    setLevel(res.level);
-                    setInternalLevel(res.internalLevel);
-                    setHP(res.hp);
-                    setStr(res.str);
-                    setDef(res.def);
-                    setMag(res.mag);
-                    setRes(res.res);
-                    setDex(res.dex);
-                    setLuck(res.luck);
-                    setSpd(res.spd);
+                    (res) => changeHandler(res)
+                    // setCharacterInstance.name(res.name);
+                    // setCharClass(res.class);
+                    // setIsMale(res.isMale);
+                    // setCharacterInstance.level(res.level)
+                    // setInternalLevel(res.internalLevel);
+                    // setHP(res.hp);
+                    // setStr(res.str);
+                    // setDef(res.def);
+                    // setMag(res.mag);
+                    // setRes(res.res);
+                    // setDex(res.dex);
+                    // setLuck(res.luck);
+                    // setSpd(res.spd);
                 })
                 .catch((err) => {
                     console.log(err)
@@ -85,26 +76,26 @@ const Form = (props) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        const newCharacter = {
-            name,
-            class: charClass,
-            level,
-            internalLevel,
-            isMale,
-            hp,
-            str,
-            def,
-            mag,
-            res,
-            dex,
-            luck,
-            spd
-        }
+        // const newCharacter = {
+        //     name,
+        //     class: charClass,
+        //     level,
+        //     internalLevel,
+        //     isMale,
+        //     hp,
+        //     str,
+        //     def,
+        //     mag,
+        //     res,
+        //     dex,
+        //     luck,
+        //     spd
+        // }
         if (page == 'edit') {
-            updateOneCharacter(id, newCharacter)
+            updateOneCharacter(id, characterInstance)
                 .then((res) => {
                     console.log(res)
-                    navigate('/')
+                    navigate('/');
                 })
                 .catch((err) => {
                     console.log('ERROR: ', err);
@@ -115,7 +106,7 @@ const Form = (props) => {
                 });
         }
         else {
-            createCharacter(newCharacter)
+            createCharacter(characterInstance)
                 .then((res) => {
                     console.log(res)
                     navigate('/')
@@ -145,7 +136,7 @@ const Form = (props) => {
                         name="name"
                         id="name"
                         defaultValue={"pick"}
-                        onChange={(e) => nameHandler(e, setFormErrors, formErrors, setName)}>
+                        onChange={(e) => changeHandler(e, formErrors, setFormErrors, characterInstance, setCharacterInstance)}>
                         <option value="pick" disabled>
                             --Select Name--
                         </option>
@@ -187,7 +178,7 @@ const Form = (props) => {
                         name="class"
                         id="class"
                         defaultValue={"pick"}
-                        onChange={(e) => classHandler(e, setFormErrors, formErrors, setName)}>
+                        onChange={(e) => changeHandler(e, formErrors, setFormErrors, characterInstance, setCharacterInstance)}>
                         <option value="pick" disabled>
                             --Select Name--
                         </option>
@@ -201,13 +192,13 @@ const Form = (props) => {
                     </select>}
                     {
                         formErrors ?
-                            <p className='text-danger'>{formErrors.charClass}</p>
+                            <p className='text-danger'>{formErrors.class}</p>
                             :
                             null
                     }
                     {
                         errors.number ?
-                            <p className='text-danger'>{errors.charClass.message}</p>
+                            <p className='text-danger'>{errors.class.message}</p>
                             :
                             null
                     }
@@ -215,9 +206,10 @@ const Form = (props) => {
                 <div>
                     <label className='form-label'>Level: </label>
                     <input className='form-control'
-                        type="text"
-                        onChange={(e) => levelHandler(e, setFormErrors, formErrors, setLevel)}
-                        value={level} />
+                        type="number"
+                        name="level"
+                        onChange={(e) => changeHandler(e, formErrors, setFormErrors, characterInstance, setCharacterInstance)}
+                        value={setCharacterInstance.level} />
                     {
                         formErrors ?
                             <p className='text-danger'>{formErrors.level}</p>
@@ -234,9 +226,10 @@ const Form = (props) => {
                 <div>
                     <label className='form-label'>Internal Level: </label>
                     <input className='form-control'
-                        type="text"
-                        onChange={(e) => internalLevelHandler(e, setFormErrors, formErrors, setInternalLevel)}
-                        value={internalLevel} />
+                        type="number"
+                        name="internalLevel"
+                        onChange={(e) => changeHandler(e, formErrors, setFormErrors, characterInstance, setCharacterInstance)}
+                        value={setCharacterInstance.internalLevel} />
                     {
                         formErrors ?
                             <p className='text-danger'>{formErrors.internalLevel}</p>
@@ -253,9 +246,10 @@ const Form = (props) => {
                 <div>
                     <label className='form-label'>HP: </label>
                     <input className='form-control'
-                        type="text"
-                        onChange={(e) => hpHandler(e, setFormErrors, formErrors, setHP)}
-                        value={hp} />
+                        type="number"
+                        name="hp"
+                        onChange={(e) => changeHandler(e, formErrors, setFormErrors, characterInstance, setCharacterInstance)}
+                        value={setCharacterInstance.hp} />
                     {
                         formErrors ?
                             <p className='text-danger'>{formErrors.hp}</p>
@@ -272,9 +266,10 @@ const Form = (props) => {
                 <div>
                     <label className='form-label'>Str: </label>
                     <input className='form-control'
-                        type="text"
-                        onChange={(e) => strHandler(e, setFormErrors, formErrors, setStr)}
-                        value={str} />
+                        type="number"
+                        name="str"
+                        onChange={(e) => changeHandler(e, formErrors, setFormErrors, characterInstance, setCharacterInstance)}
+                        value={setCharacterInstance.str} />
                     {
                         formErrors ?
                             <p className='text-danger'>{formErrors.str}</p>
@@ -291,9 +286,10 @@ const Form = (props) => {
                 <div>
                     <label className='form-label'>Def: </label>
                     <input className='form-control'
-                        type="text"
-                        onChange={(e) => defHandler(e, setFormErrors, formErrors, setDef)}
-                        value={def} />
+                        type="number"
+                        name="def"
+                        onChange={(e) => changeHandler(e, formErrors, setFormErrors, characterInstance, setCharacterInstance)}
+                        value={setCharacterInstance.def} />
                     {
                         formErrors ?
                             <p className='text-danger'>{formErrors.def}</p>
@@ -310,9 +306,10 @@ const Form = (props) => {
                 <div>
                     <label className='form-label'>Mag: </label>
                     <input className='form-control'
-                        type="text"
-                        onChange={(e) => magHandler(e, setFormErrors, formErrors, setMag)}
-                        value={mag} />
+                        type="number"
+                        name="mag"
+                        onChange={(e) => changeHandler(e, formErrors, setFormErrors, characterInstance, setCharacterInstance)}
+                        value={setCharacterInstance.mag} />
                     {
                         formErrors ?
                             <p className='text-danger'>{formErrors.mag}</p>
@@ -329,9 +326,10 @@ const Form = (props) => {
                 <div>
                     <label className='form-label'>Res: </label>
                     <input className='form-control'
-                        type="text"
-                        onChange={(e) => resHandler(e, setFormErrors, formErrors, setRes)}
-                        value={res} />
+                        type="number"
+                        name="res"
+                        onChange={(e) => changeHandler(e, formErrors, setFormErrors, characterInstance, setCharacterInstance)}
+                        value={setCharacterInstance.res} />
                     {
                         formErrors ?
                             <p className='text-danger'>{formErrors.res}</p>
@@ -348,9 +346,10 @@ const Form = (props) => {
                 <div>
                     <label className='form-label'>Dex: </label>
                     <input className='form-control'
-                        type="text"
-                        onChange={(e) => dexHandler(e, setFormErrors, formErrors, setDex)}
-                        value={dex} />
+                        type="number"
+                        name="dex"
+                        onChange={(e) => changeHandler(e, formErrors, setFormErrors, characterInstance, setCharacterInstance)}
+                        value={setCharacterInstance.dex} />
                     {
                         formErrors ?
                             <p className='text-danger'>{formErrors.dex}</p>
@@ -367,9 +366,10 @@ const Form = (props) => {
                 <div>
                     <label className='form-label'>Luck: </label>
                     <input className='form-control'
-                        type="text"
-                        onChange={(e) => luckHandler(e, setFormErrors, formErrors, setLuck)}
-                        value={luck} />
+                        type="number"
+                        name="luck"
+                        onChange={(e) => changeHandler(e, formErrors, setFormErrors, characterInstance, setCharacterInstance)}
+                        value={setCharacterInstance.luck} />
                     {
                         formErrors ?
                             <p className='text-danger'>{formErrors.luck}</p>
@@ -386,9 +386,10 @@ const Form = (props) => {
                 <div>
                     <label className='form-label'>Spd: </label>
                     <input className='form-control'
-                        type="text"
-                        onChange={(e) => spdHandler(e, setFormErrors, formErrors, setSpd)}
-                        value={spd} />
+                        type="number"
+                        name="spd"
+                        onChange={(e) => changeHandler(e, formErrors, setFormErrors, characterInstance, setCharacterInstance)}
+                        value={setCharacterInstance.spd} />
                     {
                         formErrors ?
                             <p className='text-danger'>{formErrors.spd}</p>
@@ -403,12 +404,15 @@ const Form = (props) => {
                     }
                 </div>
                 <div>
-                    <label className='form-label'>Gender: {isMale ? "Male" : "Female"}</label>
-                    <input className='form-control'
-                        class='w-30'
+                    <label className='form-label'>Gender: {characterInstance.isMale ? "Male" : "Female"}</label>
+                    <input
                         type="checkbox"
-                        onChange={() => setIsMale(!isMale)}
-                        checked={isMale} />
+                        name="isMale"
+                        onChange={(e) => setCharacterInstance((characterInstance) => ({
+                            ...characterInstance, [e.target.name]: !e.target.checked
+                        }
+                        ))}
+                        value={characterInstance.isMale} />
                     {
                         formErrors ?
                             <p className='text-danger'>{formErrors.isMale}</p>

@@ -16,7 +16,7 @@ const DisplayInfo = () => {
     })
     return (
         <>
-            <div class='text-white fs-2'>
+            <div className='text-white fs-2'>
                 <p>Name: {character.name}</p>
                 <p>Class: {character.class}</p>
                 <p>Gender: {character.isMale ? "Male" : "Female"}</p>
@@ -30,7 +30,7 @@ const DisplayInfo = () => {
                 <p>Dex: {character.dex}</p>
                 <p>Luck: {character.luck}</p>
                 <p>Spd: {character.spd}</p>
-                <button class=' btn btn-dark' onClick={() =>deleteHandler(id, navigate)}>Delete</button>
+                <button className=' btn btn-dark' onClick={() =>deleteHandler(id, navigate)}>Delete</button>
                 <br/>
                 <Link to='/' className='btn btn-secondary'>Home</Link>
             </div>
