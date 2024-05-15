@@ -1,96 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import { createCharacter, getOneCharacter, updateOneCharacter } from '../services/CharacterService.jsx';
-import { useParams } from 'react-router-dom';
+import React, { useState } from 'react';
+import { createCharacter, updateOneCharacter } from '../services/CharacterService.jsx';
+import { useParams, useNavigate } from 'react-router-dom';
 import characterData from '../FireEmblemData/Characters.js';
 import classData from '../FireEmblemData/Classes.js';
-import {
-    // nameHandler, classHandler, levelHandler, internalLevelHandler,
-    // hpHandler, strHandler, defHandler, magHandler, resHandler, dexHandler,
-    // luckHandler, spdHandler,
-    changeHandler
-    //, characterInstance, setCharacterInstance, formErrors, setFormErrors
-} from '../functions/FormFunctions.jsx';
-import { useNavigate } from "react-router-dom"
+import { changeHandler } from '../functions/FormFunctions.jsx';
 const Form = (props) => {
     let { page } = props;
-    const navigate = useNavigate();
+    const { characterInstance } = props;
+    const { setCharacterInstance } = props;
+    const navigate  = useNavigate();
     const { id } = useParams();
     const unitData = characterData;
     const unitClassData = classData;
     const [errors, setErrors] = useState({});
-    const [formErrors, setFormErrors] = useState({
-        name: "Character name is required",
-        class: "Class is required",
-        hp: "HP stat is required",
-        str: "Str stat is required",
-        def: "Def stat is required",
-        mag: "Mag stat is required",
-        res: "Res stat is required",
-        dex: "Dex stat is required",
-        luck: "Luck stat is required",
-        spd: "Speed stat is required",
-        internalLevel: "Internal Level is required",
-        level: "Level is required"
-    });
-    const [characterInstance, setCharacterInstance] = useState({
-        name: "",
-        class: "",
-        level: 1,
-        internalLevel: 1,
-        hp: 0,
-        str: 0,
-        mag: 0,
-        dex: 0,
-        spd: 0,
-        def: 0,
-        res: 0,
-        lck: 0,
-        isMale: true
-    })
-
-    if (page == 'edit') {
-        useEffect(() => {
-            getOneCharacter(id)
-                .then((res) => {
-                    console.log(res);
-                    (res) => changeHandler(res)
-                    // setCharacterInstance.name(res.name);
-                    // setCharClass(res.class);
-                    // setIsMale(res.isMale);
-                    // setCharacterInstance.level(res.level)
-                    // setInternalLevel(res.internalLevel);
-                    // setHP(res.hp);
-                    // setStr(res.str);
-                    // setDef(res.def);
-                    // setMag(res.mag);
-                    // setRes(res.res);
-                    // setDex(res.dex);
-                    // setLuck(res.luck);
-                    // setSpd(res.spd);
-                })
-                .catch((err) => {
-                    console.log(err)
-                })
-        }, [])
-    }
+    const { formErrors } = props;
+    const { setFormErrors } = props;
 
     const submitHandler = (e) => {
         e.preventDefault();
-        // const newCharacter = {
-        //     name,
-        //     class: charClass,
-        //     level,
-        //     internalLevel,
-        //     isMale,
-        //     hp,
-        //     str,
-        //     def,
-        //     mag,
-        //     res,
-        //     dex,
-        //     luck,
-        //     spd
-        // }
         if (page == 'edit') {
             updateOneCharacter(id, characterInstance)
                 .then((res) => {
@@ -135,9 +62,9 @@ const Form = (props) => {
                     {<select
                         name="name"
                         id="name"
-                        defaultValue={"pick"}
+                        value={characterInstance.name}
                         onChange={(e) => changeHandler(e, formErrors, setFormErrors, characterInstance, setCharacterInstance)}>
-                        <option value="pick" disabled>
+                        <option value="" disabled>
                             --Select Name--
                         </option>
                         {
@@ -148,12 +75,6 @@ const Form = (props) => {
                             ))
                         }
                     </select>}
-
-                    {/* {<input className='form-control'
-                        type="text"
-                        onChange={(e) => nameHandler(e, setFormErrors, formErrors, setName)}
-                        value={name}
-                    />} */}
                     {
                         formErrors ?
                             <p className='text-danger'>{formErrors.name}</p>
@@ -169,18 +90,13 @@ const Form = (props) => {
                 </div>
                 <div>
                     <label className='form-label'>Class:  </label>
-                    {/* <input className='form-control'
-                        type="text"
-                        onChange={(e) => classHandler(e, setFormErrors, formErrors, setCharClass)}
-                        value={charClass}
-                    /> */}
                     {<select
                         name="class"
                         id="class"
-                        defaultValue={"pick"}
+                        value={characterInstance.class}
                         onChange={(e) => changeHandler(e, formErrors, setFormErrors, characterInstance, setCharacterInstance)}>
-                        <option value="pick" disabled>
-                            --Select Name--
+                        <option value="" disabled>
+                            --Select Class--
                         </option>
                         {
                             unitClassData.map((classData, index) => (
@@ -209,7 +125,7 @@ const Form = (props) => {
                         type="number"
                         name="level"
                         onChange={(e) => changeHandler(e, formErrors, setFormErrors, characterInstance, setCharacterInstance)}
-                        value={setCharacterInstance.level} />
+                        value={characterInstance.level} />
                     {
                         formErrors ?
                             <p className='text-danger'>{formErrors.level}</p>
@@ -229,7 +145,7 @@ const Form = (props) => {
                         type="number"
                         name="internalLevel"
                         onChange={(e) => changeHandler(e, formErrors, setFormErrors, characterInstance, setCharacterInstance)}
-                        value={setCharacterInstance.internalLevel} />
+                        value={characterInstance.internalLevel} />
                     {
                         formErrors ?
                             <p className='text-danger'>{formErrors.internalLevel}</p>
@@ -249,7 +165,7 @@ const Form = (props) => {
                         type="number"
                         name="hp"
                         onChange={(e) => changeHandler(e, formErrors, setFormErrors, characterInstance, setCharacterInstance)}
-                        value={setCharacterInstance.hp} />
+                        value={characterInstance.hp} />
                     {
                         formErrors ?
                             <p className='text-danger'>{formErrors.hp}</p>
@@ -269,7 +185,7 @@ const Form = (props) => {
                         type="number"
                         name="str"
                         onChange={(e) => changeHandler(e, formErrors, setFormErrors, characterInstance, setCharacterInstance)}
-                        value={setCharacterInstance.str} />
+                        value={characterInstance.str} />
                     {
                         formErrors ?
                             <p className='text-danger'>{formErrors.str}</p>
@@ -289,7 +205,7 @@ const Form = (props) => {
                         type="number"
                         name="def"
                         onChange={(e) => changeHandler(e, formErrors, setFormErrors, characterInstance, setCharacterInstance)}
-                        value={setCharacterInstance.def} />
+                        value={characterInstance.def} />
                     {
                         formErrors ?
                             <p className='text-danger'>{formErrors.def}</p>
@@ -309,7 +225,7 @@ const Form = (props) => {
                         type="number"
                         name="mag"
                         onChange={(e) => changeHandler(e, formErrors, setFormErrors, characterInstance, setCharacterInstance)}
-                        value={setCharacterInstance.mag} />
+                        value={characterInstance.mag} />
                     {
                         formErrors ?
                             <p className='text-danger'>{formErrors.mag}</p>
@@ -329,7 +245,7 @@ const Form = (props) => {
                         type="number"
                         name="res"
                         onChange={(e) => changeHandler(e, formErrors, setFormErrors, characterInstance, setCharacterInstance)}
-                        value={setCharacterInstance.res} />
+                        value={characterInstance.res} />
                     {
                         formErrors ?
                             <p className='text-danger'>{formErrors.res}</p>
@@ -349,7 +265,7 @@ const Form = (props) => {
                         type="number"
                         name="dex"
                         onChange={(e) => changeHandler(e, formErrors, setFormErrors, characterInstance, setCharacterInstance)}
-                        value={setCharacterInstance.dex} />
+                        value={characterInstance.dex} />
                     {
                         formErrors ?
                             <p className='text-danger'>{formErrors.dex}</p>
@@ -369,7 +285,7 @@ const Form = (props) => {
                         type="number"
                         name="luck"
                         onChange={(e) => changeHandler(e, formErrors, setFormErrors, characterInstance, setCharacterInstance)}
-                        value={setCharacterInstance.luck} />
+                        value={characterInstance.luck} />
                     {
                         formErrors ?
                             <p className='text-danger'>{formErrors.luck}</p>
@@ -389,7 +305,7 @@ const Form = (props) => {
                         type="number"
                         name="spd"
                         onChange={(e) => changeHandler(e, formErrors, setFormErrors, characterInstance, setCharacterInstance)}
-                        value={setCharacterInstance.spd} />
+                        value={characterInstance.spd} />
                     {
                         formErrors ?
                             <p className='text-danger'>{formErrors.spd}</p>
