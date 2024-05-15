@@ -1,8 +1,18 @@
-import classData from "./Classes"
+// import {
+//     dragonChild, divineDragon, fellChildVeyle, nobleAlfred, avenir, nobleCeline,
+//     vidame, lordDiamant, successeur, lordAlcryst, tireurDelite, wingTamerIvy, lindwurm,
+//     wingTamerHortensia, sleipnirRider, sentinalTimerra, picket, sentinalFogado, cupido,
+//     swordFighter, swordMaster, hero, lanceFighter, halberdier, royalKnight, axeFighter,
+//     berserker, warrior, archer, sniper, bowKnight, swordArmor, lanceArmor, axeArmor,
+//     general, greatKnight, swordCavalier, lanceCavalier, axeCavalier, paladin, wolfKnight,
+//     mage, sage, mageKnight, martialMonk, martialMaster, highPriest, swordFlier, lanceFlier,
+//     axeFlier, griffinKnight, wyvernKnight, thief, dancer, fellChildNel, fellChildRafal,
+//     melusine, enchanter, mageCannoneer
+// } from "./Classes"
 const AlearM = {
     name: "Alear (M)",
     baseLevel: 1,
-    baseClass: dragonChild,
+    // baseClass: dragonChild,
     isMale: true,
     growthRates: {
         hp: 60,
@@ -28,7 +38,7 @@ const AlearM = {
 const AlearF = {
     name: "Alear (F)",
     baseLevel: 1,
-    baseClass: dragonChild,
+    // baseClass: dragonChild,
     isMale: false,
     growthRates: {
         hp: 60,
@@ -54,7 +64,7 @@ const AlearF = {
 const Vander = {
     name: "Vander",
     baseLevel: 1,
-    baseClass: paladin,
+    // baseClass: paladin,
     isMale: true,
     growthRates: {
         hp: 60,
@@ -80,7 +90,7 @@ const Vander = {
 const Clanne = {
     name: "Clanne",
     baseLevel: 1,
-    baseClass: mage,
+    // baseClass: mage,
     isMale: true,
     growthRates: {
         hp: 40,
@@ -106,7 +116,7 @@ const Clanne = {
 const Framme = {
     name: "Framme",
     baseLevel: 1,
-    baseClass: martialMonk,
+    // baseClass: martialMonk,
     isMale: false,
     growthRates: {
         hp: 55,
@@ -132,7 +142,7 @@ const Framme = {
 const Alfred = {
     name: "Alfred",
     baseLevel: 5,
-    baseClass: nobleAlfred,
+    // baseClass: nobleAlfred,
     isMale: true,
     growthRates: {
         hp: 65,
@@ -158,7 +168,7 @@ const Alfred = {
 const Etie = {
     name: "Etie",
     baseLevel: 4,
-    baseClass: archer,
+    // baseClass: archer,
     isMale: false,
     growthRates: {
         hp: 45,
@@ -184,7 +194,7 @@ const Etie = {
 const Boucheron = {
     name: "Boucheron",
     baseLevel: 4,
-    baseClass: axeFighter,
+    // baseClass: axeFighter,
     isMale: true,
     growthRates: {
         hp: 85,
@@ -210,7 +220,7 @@ const Boucheron = {
 const Celine = {
     name: "Celine",
     baseLevel: 5,
-    baseClass: nobleCeline,
+    // baseClass: nobleCeline,
     isMale: false,
     growthRates: {
         hp: 50,
@@ -236,7 +246,7 @@ const Celine = {
 const Chloe = {
     name: "Chloe",
     baseLevel: 6,
-    baseClass: lanceFlier,
+    // baseClass: lanceFlier,
     isMale: false,
     growthRates: {
         hp: 75,
@@ -262,7 +272,7 @@ const Chloe = {
 const Louis = {
     name: "Louis",
     baseLevel: 6,
-    baseClass: lanceArmor,
+    // baseClass: lanceArmor,
     isMale: true,
     growthRates: {
         hp: 75,
@@ -288,7 +298,7 @@ const Louis = {
 const Yunaka = {
     name: "Yunaka",
     baseLevel: 6,
-    baseClass: thief,
+    // baseClass: thief,
     isMale: false,
     growthRates: {
         hp: 50,
@@ -314,7 +324,7 @@ const Yunaka = {
 const Alcryst = {
     name: "Alcryst",
     baseLevel: 10,
-    baseClass: lordAlcryst,
+    //baseClass: lordAlcryst,
     isMale: true,
     growthRates: {
         hp: 65,
@@ -340,7 +350,7 @@ const Alcryst = {
 const Citrinne = {
     name: "Citrinne",
     baseLevel: 10,
-    baseClass: mage,
+    //baseClass: mage,
     isMale: false,
     growthRates: {
         hp: 45,
@@ -366,7 +376,7 @@ const Citrinne = {
 const Lapis = {
     name: "Lapis",
     baseLevel: 10,
-    baseClass: swordFighter,
+    //baseClass: swordFighter,
     isMale: false,
     growthRates: {
         hp: 55,
@@ -392,7 +402,7 @@ const Lapis = {
 const Diamant = {
     name: "Diamant",
     baseLevel: 11,
-    baseClass: lordDiamant,
+    //baseClass: lordDiamant,
     isMale: true,
     growthRates: {
         hp: 75,
@@ -418,7 +428,7 @@ const Diamant = {
 const Amber = {
     name: "Amber",
     baseLevel: 11,
-    baseClass: lanceCavalier,
+    //baseClass: lanceCavalier,
     isMale: true,
     growthRates: {
         hp: 65,
@@ -444,7 +454,7 @@ const Amber = {
 const Jade = {
     name: "Jade",
     baseLevel: 12,
-    baseClass: axeArmor,
+    //baseClass: axeArmor,
     isMale: false,
     growthRates:
     {
@@ -471,7 +481,7 @@ const Jade = {
 const Ivy = {
     name: "Ivy",
     baseLevel: 17,
-    baseClass: wingTamer,
+    //baseClass: wingTamer,
     isMale: false,
     growthRates: {
         hp: 55,
@@ -497,7 +507,7 @@ const Ivy = {
 const Kagetsu = {
     name: "Kagetsu",
     baseLevel: 1,
-    baseClass: swordMaster,
+    //baseClass: swordMaster,
     isMale: true,
     growthRates: {
         hp: 60,
@@ -523,7 +533,7 @@ const Kagetsu = {
 const Zelkov = {
     name: "Zelkov",
     baseLevel: 17,
-    baseClass: thief,
+    //baseClass: thief,
     isMale: true,
     growthRates: {
         hp: 65,
@@ -549,7 +559,7 @@ const Zelkov = {
 const Fogado = {
     name: "Fogado",
     baseLevel: 17,
-    baseClass: sentinelFogado,
+    //baseClass: sentinelFogado,
     isMale: true,
     growthRates: {
         hp: 60,
@@ -575,7 +585,7 @@ const Fogado = {
 const Pandreo = {
     name: "Pandreo",
     baseLevel: 1,
-    baseClass: highPriest,
+    //baseClass: highPriest,
     isMale: true,
     growthRates: {
         hp: 60,
@@ -601,7 +611,7 @@ const Pandreo = {
 const Bunet = {
     name: "Bunet",
     baseLevel: 1,
-    baseClass: greatKnight,
+    //baseClass: greatKnight,
     isMale: true,
     growthRates: {
         hp: 65,
@@ -627,7 +637,7 @@ const Bunet = {
 const Timerra = {
     name: "Timerra",
     baseLevel: 18,
-    baseClass: sentinelTimerra,
+    //baseClass: sentinelTimerra,
     isMale: false,
     growthRates: {
         hp: 55,
@@ -653,7 +663,7 @@ const Timerra = {
 const Pannette = {
     name: "Pannette",
     baseLevel: 1,
-    baseClass: berserker,
+    //baseClass: berserker,
     isMale: false,
     growthRates: {
         hp: 75,
@@ -679,7 +689,7 @@ const Pannette = {
 const Merrin = {
     name: "Merrin",
     baseLevel: 1,
-    baseClass: wolfKnight,
+    //baseClass: wolfKnight,
     isMale: false,
     growthRates: {
         hp: 55,
@@ -705,7 +715,7 @@ const Merrin = {
 const Hortensia = {
     name: "Hortensia",
     baseLevel: 19,
-    baseClass: wingTamer,
+    //baseClass: wingTamer,
     isMale: false,
     growthRates: {
         hp: 40,
@@ -731,7 +741,7 @@ const Hortensia = {
 const Seadall = {
     name: "Seadall",
     baseLevel: 15,
-    baseClass: dancer,
+    //baseClass: dancer,
     isMale: true,
     growthRates: {
         hp: 55,
@@ -757,7 +767,7 @@ const Seadall = {
 const Rosado = {
     name: "Rosado",
     baseLevel: 3,
-    baseClass: wyvernKnight,
+    //baseClass: wyvernKnight,
     isMale: true,
     growthRates: {
         hp: 75,
@@ -783,7 +793,7 @@ const Rosado = {
 const Goldmary = {
     name: "Goldmary",
     baseLevel: 3,
-    baseClass: hero,
+    //baseClass: hero,
     isMale: false,
     growthRates: {
         hp: 65,
@@ -809,7 +819,7 @@ const Goldmary = {
 const Lindon = {
     name: "Lindon",
     baseLevel: 5,
-    baseClass: sage,
+    //baseClass: sage,
     isMale: true,
     growthRates: {
         hp: 65,
@@ -835,7 +845,7 @@ const Lindon = {
 const Saphir = {
     name: "Saphir",
     baseLevel: 7,
-    baseClass: warrior,
+    //baseClass: warrior,
     isMale: false,
     growthRates: {
         hp: 80,
@@ -861,7 +871,7 @@ const Saphir = {
 const Veyle = {
     name: "Veyle",
     baseLevel: 35,
-    baseClass: fellChildVeyle,
+    //baseClass: fellChildVeyle,
     isMale: false,
     growthRates: {
         hp: 40,
@@ -887,7 +897,7 @@ const Veyle = {
 const Mauvier = {
     name: "Mauvier",
     baseLevel: 12,
-    baseClass: royalKnight,
+    //baseClass: royalKnight,
     isMale: true,
     growthRates: {
         hp: 70,
@@ -913,7 +923,7 @@ const Mauvier = {
 const Anna = {
     name: "Anna",
     baseLevel: 5,
-    baseClass: axeFighter,
+    //baseClass: axeFighter,
     isMale: false,
     growthRates: {
         hp: 55,
@@ -939,7 +949,7 @@ const Anna = {
 const Jean = {
     name: "Jean",
     baseLevel: 1,
-    baseClass: martialMonk,
+    //baseClass: martialMonk,
     isMale: true,
     growthRates: {
         hp: 50,
@@ -965,7 +975,7 @@ const Jean = {
 const Nel = {
     name: "Nel",
     baseLevel: 20,
-    baseClass: fellChildNel,
+    //baseClass: fellChildNel,
     isMale: false,
     growthRates: {
         hp: 55,
@@ -991,7 +1001,7 @@ const Nel = {
 const Rafal = {
     name: "Rafal",
     baseLevel: 20,
-    baseClass: fellChildRafal,
+    //baseClass: fellChildRafal,
     isMale: true,
     growthRates: {
         hp: 70,
@@ -1017,7 +1027,7 @@ const Rafal = {
 const Zelestia = {
     name: "Zelestia",
     baseLevel: 20,
-    baseClass: melusine,
+    //baseClass: melusine,
     isMale: false,
     growthRates: {
         hp: 60,
@@ -1043,7 +1053,7 @@ const Zelestia = {
 const Gregory = {
     name: "Gregory",
     baseLevel: 1,
-    baseClass: sage,
+    //baseClass: sage,
     isMale: true,
     growthRates: {
         hp: 55,
@@ -1069,7 +1079,7 @@ const Gregory = {
 const Madeline = {
     name: "Madeline",
     baseLevel: 1,
-    baseClass: general,
+    //baseClass: general,
     isMale: false,
     growthRates: {
         hp: 75,

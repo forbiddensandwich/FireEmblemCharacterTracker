@@ -22,19 +22,19 @@ const dragonChild = {
         res: 25,
         lck: 35,
         bld: 13
+    },
+    baseStats: {
+        hp: 22,
+        str: 6,
+        mag: 0,
+        dex: 2,
+        spd: 7,
+        def: 5,
+        res: 3,
+        lck: 2,
+        bld: 4,
+        mov: 4
     }
-    // baseStats : {
-    //     hp: 22,
-    //     str: 6,
-    //     mag: 0,
-    //     dex: 2,
-    //     spd: 7,
-    //     def: 5,
-    //     res: 3,
-    //     lck: 2,
-    //     bld: 4,
-    //     mov: 4
-    // }
 }
 const divineDragon = {
     name: "Divine Dragon",
@@ -59,30 +59,19 @@ const divineDragon = {
         res: 25,
         lck: 35,
         bld: 13
+    },
+    baseStats: {
+        hp: 24,
+        str: 8,
+        mag: 1,
+        dex: 4,
+        spd: 8,
+        def: 6,
+        res: 5,
+        lck: 3,
+        bld: 7,
+        mov: 5
     }
-    // classCaps: {
-    //     hp:,
-    //     str:,
-    //     mag:,
-    //     dex:,
-    //     spd:,
-    //     def:,
-    //     res:,
-    //     lck:,
-    //     bld:
-    // },
-    // baseStats: {
-    //     hp: 24,
-    //     str: 8,
-    //     mag: 1,
-    //     dex: 4,
-    //     spd: 8,
-    //     def: 6,
-    //     res: 5,
-    //     lck: 3,
-    //     bld: 7,
-    //     mov: 5
-    // }
 }
 const fellChildVeyle = {
     name: "Fell Child (Veyle)",
@@ -107,19 +96,19 @@ const fellChildVeyle = {
         res: 41,
         lck: 30,
         bld: 11
+    },
+    baseStats: {
+        hp: 20,
+        str: 3,
+        mag: 7,
+        dex: 4,
+        spd: 5,
+        def: 2,
+        res: 7,
+        lck: 3,
+        bld: 4,
+        mov: 5
     }
-    // baseStats: {
-    //     hp: 20,
-    //     str: 3,
-    //     mag: 7,
-    //     dex: 4,
-    //     spd: 5,
-    //     def: 2,
-    //     res: 7,
-    //     lck: 3,
-    //     bld: 4,
-    //     mov: 5
-    // }
 }
 
 const nobleAlfred = {
@@ -145,6 +134,18 @@ const nobleAlfred = {
         res: 21,
         lck: 45,
         bld: 16
+    },
+    baseStats: {
+        hp: 24,
+        str: 7,
+        mag: 2,
+        dex: 6,
+        spd: 5,
+        def: 6,
+        res: 4,
+        lck: 4,
+        bld: 6,
+        mov: 5
     }
 }
 const avenir = {
@@ -170,6 +171,18 @@ const avenir = {
         res: 21,
         lck: 45,
         bld: 16
+    },
+    baseStats: {
+        hp: 25,
+        str: 8,
+        mag: 4,
+        dex: 7,
+        spd: 6,
+        def: 8,
+        res: 6,
+        lck: 6,
+        bld: 7,
+        mov: 6
     }
 }
 const nobleCeline = {
@@ -195,6 +208,18 @@ const nobleCeline = {
         res: 35,
         lck: 50,
         bld: 11
+    },
+    baseStats: {
+        hp: 20,
+        str: 5,
+        mag: 8,
+        dex: 5,
+        spd: 8,
+        def: 3,
+        res: 5,
+        lck: 4,
+        bld: 4,
+        mov: 4
     }
 }
 const vidame = {
@@ -220,6 +245,18 @@ const vidame = {
         res: 35,
         lck: 50,
         bld: 11
+    },
+    baseStats: {
+        hp: 21,
+        str: 6,
+        mag: 9,
+        dex: 6,
+        spd: 9,
+        def: 4,
+        res: 6,
+        lck: 5,
+        bld: 5,
+        mov: 5
     }
 }
 const lordDiamant = {
@@ -245,6 +282,18 @@ const lordDiamant = {
         res: 20,
         lck: 25,
         bld: 20
+    },
+    baseStats: {
+        hp: 23,
+        str: 8,
+        mag: 1,
+        dex: 7,
+        spd: 8,
+        def: 5,
+        res: 3,
+        lck: 3,
+        bld: 7,
+        mov: 4
     }
 }
 const successeur = {
@@ -270,6 +319,18 @@ const successeur = {
         res: 20,
         lck: 25,
         bld: 20
+    },
+    baseStats: {
+        hp: 25,
+        str: 10,
+        mag: 2,
+        dex: 8,
+        spd: 9,
+        def: 6,
+        res: 3,
+        lck: 4,
+        bld: 8,
+        mov: 5
     }
 }
 const lordAlcryst = {
@@ -295,6 +356,18 @@ const lordAlcryst = {
         res: 19,
         lck: 30,
         bld: 15
+    },
+    baseStats: {
+        hp: 21,
+        str: 7,
+        mag: 1,
+        dex: 10,
+        spd: 7,
+        def: 4,
+        res: 3,
+        lck: 2,
+        bld: 5,
+        mov: 4
     }
 }
 const tireurDelite = {
@@ -320,6 +393,18 @@ const tireurDelite = {
         res: 19,
         lck: 30,
         bld: 15
+    },
+    baseStats: {
+        hp: 22,
+        str: 8,
+        mag: 1,
+        dex: 12,
+        spd: 8,
+        def: 6,
+        res: 4,
+        lck: 4,
+        bld: 6,
+        mov: 5
     }
 }
 const wingTamerIvy = {
@@ -345,6 +430,18 @@ const wingTamerIvy = {
         res: 40,
         lck: 20,
         bld: 15
+    },
+    baseStats: {
+        hp: 20,
+        str: 1,
+        mag: 8,
+        dex: 4,
+        spd: 4,
+        def: 6,
+        res: 8,
+        lck: 1,
+        bld: 5,
+        mov: 5
     }
 }
 const lindwurm = {
@@ -370,6 +467,18 @@ const lindwurm = {
         res: 40,
         lck: 20,
         bld: 15
+    },
+    baseStats: {
+        hp: 22,
+        str: 2,
+        mag: 10,
+        dex: 5,
+        spd: 5,
+        def: 8,
+        res: 9,
+        lck: 1,
+        bld: 6,
+        mov: 6
     }
 }
 const wingTamerHortensia = {
@@ -395,6 +504,18 @@ const wingTamerHortensia = {
         res: 51,
         lck: 53,
         bld: 11
+    },
+    baseStats: {
+        hp: 18,
+        str: 0,
+        mag: 5,
+        dex: 9,
+        spd: 8,
+        def: 1,
+        res: 11,
+        lck: 6,
+        bld: 4,
+        mov: 5
     }
 }
 const sleipnirRider = {
@@ -420,6 +541,18 @@ const sleipnirRider = {
         res: 51,
         lck: 53,
         bld: 11
+    },
+    baseStats: {
+        hp: 18,
+        str: 1,
+        mag: 7,
+        dex: 10,
+        spd: 10,
+        def: 2,
+        res: 13,
+        lck: 8,
+        bld: 5,
+        mov: 6
     }
 }
 const sentinalTimerra = {
@@ -445,6 +578,18 @@ const sentinalTimerra = {
         res: 26,
         lck: 37,
         bld: 12
+    },
+    baseStats: {
+        hp: 24,
+        str: 8,
+        mag: 1,
+        dex: 5,
+        spd: 7,
+        def: 8,
+        res: 1,
+        lck: 3,
+        bld: 4,
+        mov: 4
     }
 }
 const picket = {
@@ -470,6 +615,18 @@ const picket = {
         res: 26,
         lck: 37,
         bld: 12
+    },
+    baseStats: {
+        hp: 25,
+        str: 9,
+        mag: 2,
+        dex: 6,
+        spd: 9,
+        def: 10,
+        res: 3,
+        lck: 4,
+        bld: 5,
+        mov: 5
     }
 }
 const sentinalFogado = {
@@ -495,6 +652,18 @@ const sentinalFogado = {
         res: 31,
         lck: 33,
         bld: 16
+    },
+    baseStats: {
+        hp: 21,
+        str: 5,
+        mag: 1,
+        dex: 9,
+        spd: 7,
+        def: 4,
+        res: 3,
+        lck: 2,
+        bld: 6,
+        mov: 5
     }
 }
 const cupido = {
@@ -520,6 +689,18 @@ const cupido = {
         res: 31,
         lck: 33,
         bld: 16
+    },
+    baseStats: {
+        hp: 23,
+        str: 6,
+        mag: 3,
+        dex: 10,
+        spd: 8,
+        def: 5,
+        res: 5,
+        lck: 3,
+        bld: 7,
+        mov: 6
     }
 }
 const swordFighter = {
@@ -545,6 +726,18 @@ const swordFighter = {
         res: 22,
         lck: 33,
         bld: 12
+    },
+    baseStats: {
+        hp: 20,
+        str: 5,
+        mag: 0,
+        dex: 7,
+        spd: 8,
+        def: 3,
+        res: 2,
+        lck: 2,
+        bld: 5,
+        mov: 4
     }
 }
 const swordMaster = {
@@ -570,6 +763,18 @@ const swordMaster = {
         res: 26,
         lck: 37,
         bld: 12
+    },
+    baseStats: {
+        hp: 21,
+        str: 6,
+        mag: 1,
+        dex: 9,
+        spd: 11,
+        def: 4,
+        res: 3,
+        lck: 4,
+        bld: 6,
+        mov: 5
     }
 }
 const hero = {
@@ -595,6 +800,18 @@ const hero = {
         res: 22,
         lck: 33,
         bld: 16
+    },
+    baseStats: {
+        hp: 23,
+        str: 8,
+        mag: 0,
+        dex: 8,
+        spd: 9,
+        def: 5,
+        res: 2,
+        lck: 3,
+        bld: 7,
+        mov: 5
     }
 }
 const lanceFighter = {
@@ -620,6 +837,18 @@ const lanceFighter = {
         res: 25,
         lck: 25,
         bld: 12
+    },
+    baseStats: {
+        hp: 23,
+        str: 7,
+        mag: 2,
+        dex: 8,
+        spd: 6,
+        def: 4,
+        res: 2,
+        lck: 2,
+        bld: 5,
+        mov: 4
     }
 }
 const halberdier = {
@@ -645,6 +874,18 @@ const halberdier = {
         res: 25,
         lck: 25,
         bld: 15
+    },
+    baseStats: {
+        hp: 24,
+        str: 9,
+        mag: 1,
+        dex: 9,
+        spd: 7,
+        def: 6,
+        res: 2,
+        lck: 3,
+        bld: 6,
+        mov: 5
     }
 }
 const royalKnight = {
@@ -670,6 +911,18 @@ const royalKnight = {
         res: 36,
         lck: 32,
         bld: 12
+    },
+    baseStats: {
+        hp: 23,
+        str: 7,
+        mag: 5,
+        dex: 9,
+        spd: 8,
+        def: 5,
+        res: 4,
+        lck: 5,
+        bld: 6,
+        mov: 6
     }
 }
 const axeFighter = {
@@ -695,6 +948,18 @@ const axeFighter = {
         res: 11,
         lck: 23,
         bld: 20
+    },
+    baseStats: {
+        hp: 26,
+        str: 9,
+        mag: 0,
+        dex: 5,
+        spd: 5,
+        def: 3,
+        res: 1,
+        lck: 1,
+        bld: 7,
+        mov: 4
     }
 }
 const berserker = {
@@ -720,6 +985,18 @@ const berserker = {
         res: 11,
         lck: 23,
         bld: 24
+    },
+    baseStats: {
+        hp: 29,
+        str: 13,
+        mag: 0,
+        dex: 6,
+        spd: 6,
+        def: 3,
+        res: 2,
+        lck: 2,
+        bld: 9,
+        mov: 5
     }
 }
 const warrior = {
@@ -745,6 +1022,18 @@ const warrior = {
         res: 18,
         lck: 23,
         bld: 20
+    },
+    baseStats: {
+        hp: 27,
+        str: 12,
+        mag: 1,
+        dex: 7,
+        spd: 7,
+        def: 4,
+        res: 3,
+        lck: 2,
+        bld: 8,
+        mov: 5
     }
 }
 const archer = {
@@ -770,6 +1059,18 @@ const archer = {
         res: 24,
         lck: 28,
         bld: 14
+    },
+    baseStats: {
+        hp: 19,
+        str: 6,
+        mag: 0,
+        dex: 9,
+        spd: 5,
+        def: 2,
+        res: 1,
+        lck: 2,
+        bld: 4,
+        mov: 4
     }
 }
 const sniper = {
@@ -795,6 +1096,18 @@ const sniper = {
         res: 24,
         lck: 28,
         bld: 14
+    },
+    baseStats: {
+        hp: 22,
+        str: 8,
+        mag: 1,
+        dex: 11,
+        spd: 6,
+        def: 3,
+        res: 1,
+        lck: 3,
+        bld: 5,
+        mov: 5
     }
 }
 const bowKnight = {
@@ -820,6 +1133,18 @@ const bowKnight = {
         res: 29,
         lck: 30,
         bld: 14
+    },
+    baseStats: {
+        hp: 22,
+        str: 7,
+        mag: 2,
+        dex: 10,
+        spd: 8,
+        def: 3,
+        res: 3,
+        lck: 3,
+        bld: 5,
+        mov: 6
     }
 }
 const swordArmor = {
@@ -845,6 +1170,18 @@ const swordArmor = {
         res: 16,
         lck: 25,
         bld: 20
+    },
+    baseStats: {
+        hp: 25,
+        str: 8,
+        mag: 0,
+        dex: 6,
+        spd: 1,
+        def: 12,
+        res: 0,
+        lck: 2,
+        bld: 7,
+        mov: 4
     }
 }
 const lanceArmor = {
@@ -870,6 +1207,18 @@ const lanceArmor = {
         res: 16,
         lck: 25,
         bld: 20
+    },
+    baseStats: {
+        hp: 25,
+        str: 8,
+        mag: 0,
+        dex: 6,
+        spd: 1,
+        def: 12,
+        res: 0,
+        lck: 2,
+        bld: 7,
+        mov: 4
     }
 }
 const axeArmor = {
@@ -895,6 +1244,18 @@ const axeArmor = {
         res: 16,
         lck: 25,
         bld: 20
+    },
+    baseStats: {
+        hp: 25,
+        str: 8,
+        mag: 0,
+        dex: 6,
+        spd: 1,
+        def: 12,
+        res: 0,
+        lck: 2,
+        bld: 7,
+        mov: 4
     }
 }
 const general = {
@@ -920,6 +1281,18 @@ const general = {
         res: 16,
         lck: 25,
         bld: 25
+    },
+    baseStats: {
+        hp: 28,
+        str: 11,
+        mag: 1,
+        dex: 7,
+        spd: 2,
+        def: 14,
+        res: 1,
+        lck: 3,
+        bld: 10,
+        mov: 4
     }
 }
 const greatKnight = {
@@ -945,6 +1318,18 @@ const greatKnight = {
         res: 22,
         lck: 30,
         bld: 20
+    },
+    baseStats: {
+        hp: 26,
+        str: 9,
+        mag: 2,
+        dex: 8,
+        spd: 5,
+        def: 13,
+        res: 2,
+        lck: 3,
+        bld: 8,
+        mov: 6
     }
 }
 const swordCavalier = {
@@ -970,6 +1355,18 @@ const swordCavalier = {
         res: 29,
         lck: 30,
         bld: 12
+    },
+    baseStats: {
+        hp: 23,
+        str: 6,
+        mag: 1,
+        dex: 8,
+        spd: 7,
+        def: 4,
+        res: 2,
+        lck: 2,
+        bld: 6,
+        mov: 5
     }
 }
 const lanceCavalier = {
@@ -995,6 +1392,18 @@ const lanceCavalier = {
         res: 29,
         lck: 30,
         bld: 12
+    },
+    baseStats: {
+        hp: 23,
+        str: 6,
+        mag: 1,
+        dex: 8,
+        spd: 7,
+        def: 4,
+        res: 2,
+        lck: 2,
+        bld: 6,
+        mov: 5
     }
 }
 const axeCavalier = {
@@ -1020,6 +1429,18 @@ const axeCavalier = {
         res: 29,
         lck: 30,
         bld: 12
+    },
+    baseStats: {
+        hp: 23,
+        str: 6,
+        mag: 1,
+        dex: 8,
+        spd: 7,
+        def: 4,
+        res: 2,
+        lck: 2,
+        bld: 6,
+        mov: 5
     }
 }
 const paladin = {
@@ -1045,6 +1466,18 @@ const paladin = {
         res: 29,
         lck: 30,
         bld: 16
+    },
+    baseStats: {
+        hp: 25,
+        str: 8,
+        mag: 2,
+        dex: 10,
+        spd: 8,
+        def: 6,
+        res: 3,
+        lck: 3,
+        bld: 7,
+        mov: 6
     }
 }
 const wolfKnight = {
@@ -1070,6 +1503,18 @@ const wolfKnight = {
         res: 33,
         lck: 34,
         bld: 12
+    },
+    baseStats: {
+        hp: 23,
+        str: 6,
+        mag: 3,
+        dex: 9,
+        spd: 10,
+        def: 4,
+        res: 4,
+        lck: 4,
+        bld: 6,
+        mov: 6
     }
 }
 const mage = {
@@ -1095,6 +1540,18 @@ const mage = {
         res: 40,
         lck: 24,
         bld: 11
+    },
+    baseStats: {
+        hp: 18,
+        str: 1,
+        mag: 7,
+        dex: 6,
+        spd: 6,
+        def: 1,
+        res: 7,
+        lck: 2,
+        bld: 4,
+        mov: 4
     }
 }
 const sage = {
@@ -1120,6 +1577,18 @@ const sage = {
         res: 44,
         lck: 30,
         bld: 11
+    },
+    baseStats: {
+        hp: 20,
+        str: 1,
+        mag: 9,
+        dex: 8,
+        spd: 7,
+        def: 3,
+        res: 9,
+        lck: 3,
+        bld: 5,
+        mov: 5
     }
 }
 const mageKnight = {
@@ -1145,6 +1614,18 @@ const mageKnight = {
         res: 40,
         lck: 24,
         bld: 12
+    },
+    baseStats: {
+        hp: 21,
+        str: 5,
+        mag: 7,
+        dex: 8,
+        spd: 9,
+        def: 3,
+        res: 8,
+        lck: 2,
+        bld: 6,
+        mov: 6
     }
 }
 const martialMonk = {
@@ -1170,6 +1651,18 @@ const martialMonk = {
         res: 39,
         lck: 29,
         bld: 13
+    },
+    baseStats: {
+        hp: 18,
+        str: 3,
+        mag: 5,
+        dex: 6,
+        spd: 5,
+        def: 3,
+        res: 8,
+        lck: 3,
+        bld: 3,
+        mov: 4
     }
 }
 const martialMaster = {
@@ -1195,6 +1688,18 @@ const martialMaster = {
         res: 39,
         lck: 29,
         bld: 15
+    },
+    baseStats: {
+        hp: 22,
+        str: 6,
+        mag: 5,
+        dex: 6,
+        spd: 5,
+        def: 4,
+        res: 7,
+        lck: 4,
+        bld: 6,
+        mov: 5
     }
 }
 const highPriest = {
@@ -1220,6 +1725,18 @@ const highPriest = {
         res: 48,
         lck: 38,
         bld: 13
+    },
+    baseStats: {
+        hp: 20,
+        str: 3,
+        mag: 8,
+        dex: 8,
+        spd: 6,
+        def: 3,
+        res: 10,
+        lck: 5,
+        bld: 4,
+        mov: 5
     }
 }
 const swordFlier = {
@@ -1245,6 +1762,18 @@ const swordFlier = {
         res: 22,
         lck: 25,
         bld: 14
+    },
+    baseStats: {
+        hp: 21,
+        str: 5,
+        mag: 2,
+        dex: 7,
+        spd: 9,
+        def: 3,
+        res: 7,
+        lck: 3,
+        bld: 4,
+        mov: 5
     }
 }
 const lanceFlier = {
@@ -1270,6 +1799,18 @@ const lanceFlier = {
         res: 22,
         lck: 25,
         bld: 14
+    },
+    baseStats: {
+        hp: 21,
+        str: 5,
+        mag: 2,
+        dex: 7,
+        spd: 9,
+        def: 3,
+        res: 7,
+        lck: 3,
+        bld: 4,
+        mov: 5
     }
 }
 const axeFlier = {
@@ -1295,6 +1836,18 @@ const axeFlier = {
         res: 22,
         lck: 25,
         bld: 14
+    },
+    baseStats: {
+        hp: 21,
+        str: 5,
+        mag: 2,
+        dex: 7,
+        spd: 9,
+        def: 3,
+        res: 7,
+        lck: 3,
+        bld: 4,
+        mov: 5
     }
 }
 const griffinKnight = {
@@ -1320,6 +1873,18 @@ const griffinKnight = {
         res: 35,
         lck: 35,
         bld: 14
+    },
+    baseStats: {
+        hp: 22,
+        str: 7,
+        mag: 3,
+        dex: 10,
+        spd: 11,
+        def: 4,
+        res: 9,
+        lck: 5,
+        bld: 5,
+        mov: 6
     }
 }
 const wyvernKnight = {
@@ -1345,6 +1910,18 @@ const wyvernKnight = {
         res: 22,
         lck: 25,
         bld: 18
+    },
+    baseStats: {
+        hp: 25,
+        str: 9,
+        mag: 1,
+        dex: 8,
+        spd: 9,
+        def: 6,
+        res: 5,
+        lck: 3,
+        bld: 6,
+        mov: 6
     }
 }
 const thief = {
@@ -1370,6 +1947,18 @@ const thief = {
         res: 23,
         lck: 30,
         bld: 13
+    },
+    baseStats: {
+        hp: 22,
+        str: 5,
+        mag: 0,
+        dex: 10,
+        spd: 10,
+        def: 6,
+        res: 2,
+        lck: 2,
+        bld: 4,
+        mov: 5
     }
 }
 const dancer = {
@@ -1395,6 +1984,18 @@ const dancer = {
         res: 26,
         lck: 39,
         bld: 15
+    },
+    baseStats: {
+        hp: 21,
+        str: 5,
+        mag: 1,
+        dex: 8,
+        spd: 8,
+        def: 2,
+        res: 5,
+        lck: 5,
+        bld: 5,
+        mov: 5
     }
 }
 const fellChildNel = {
@@ -1420,6 +2021,18 @@ const fellChildNel = {
         res: 31,
         lck: 37,
         bld: 13
+    },
+    baseStats: {
+        hp: 20,
+        str: 5,
+        mag: 5,
+        dex: 5,
+        spd: 5,
+        def: 5,
+        res: 5,
+        lck: 5,
+        bld: 5,
+        mov: 5
     }
 }
 const fellChildRafal = {
@@ -1445,6 +2058,18 @@ const fellChildRafal = {
         res: 20,
         lck: 19,
         bld: 13
+    },
+    baseStats: {
+        hp: 20,
+        str: 5,
+        mag: 5,
+        dex: 5,
+        spd: 5,
+        def: 5,
+        res: 5,
+        lck: 5,
+        bld: 5,
+        mov: 5
     }
 }
 const melusine = {
@@ -1470,6 +2095,18 @@ const melusine = {
         res: 36,
         lck: 27,
         bld: 12
+    },
+    baseStats: {
+        hp: 22,
+        str: 7,
+        mag: 8,
+        dex: 6,
+        spd: 8,
+        def: 6,
+        res: 9,
+        lck: 2,
+        bld: 6,
+        mov: 6
     }
 }
 const enchanter = {
@@ -1495,6 +2132,18 @@ const enchanter = {
         res: 22,
         lck: 42,
         bld: 11
+    },
+    baseStats: {
+        hp: 20,
+        str: 5,
+        mag: 5,
+        dex: 5,
+        spd: 5,
+        def: 5,
+        res: 5,
+        lck: 5,
+        bld: 5,
+        mov: 5
     }
 }
 const mageCannoneer = {
@@ -1520,6 +2169,18 @@ const mageCannoneer = {
         res: 24,
         lck: 31,
         bld: 18
+    },
+    baseStats: {
+        hp: 20,
+        str: 5,
+        mag: 5,
+        dex: 5,
+        spd: 5,
+        def: 5,
+        res: 5,
+        lck: 5,
+        bld: 5,
+        mov: 5
     }
 }
 const classData = [dragonChild, divineDragon, fellChildVeyle, nobleAlfred, avenir, nobleCeline, vidame, lordDiamant, successeur, lordAlcryst, tireurDelite, wingTamerIvy, lindwurm, wingTamerHortensia, sleipnirRider, sentinalTimerra, picket, sentinalFogado, cupido, swordFighter, swordMaster, hero, lanceFighter, halberdier, royalKnight, axeFighter, berserker, warrior, archer, sniper, bowKnight, swordArmor, lanceArmor, axeArmor, general, greatKnight, swordCavalier, lanceCavalier, axeCavalier, paladin, wolfKnight, mage, sage, mageKnight, martialMonk, martialMaster, highPriest, swordFlier, lanceFlier, axeFlier, griffinKnight, wyvernKnight, thief, dancer, fellChildNel, fellChildRafal, melusine, enchanter, mageCannoneer]

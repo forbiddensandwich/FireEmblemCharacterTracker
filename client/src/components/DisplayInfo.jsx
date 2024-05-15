@@ -30,7 +30,7 @@ const DisplayInfo = () => {
                 <p>Dex: {character.dex}</p>
                 <p>Luck: {character.luck}</p>
                 <p>Spd: {character.spd}</p>
-                <button className=' btn btn-dark' onClick={() =>deleteHandler(id, navigate)}>Delete</button>
+                <button className='btn btn-dark' onClick={() =>deleteHandler(id, navigate)}>Delete</button>
                 <br/>
                 <Link to='/' className='btn btn-secondary'>Home</Link>
             </div>
