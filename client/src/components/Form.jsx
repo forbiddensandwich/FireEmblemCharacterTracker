@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { createCharacter, updateOneCharacter } from '../services/CharacterService.jsx';
 import { useParams, useNavigate } from 'react-router-dom';
-import characterData from '../FireEmblemData/Characters.js';
-import classData from '../FireEmblemData/Classes.js';
+import characterData from '../FireEmblemData/CharacterData/Characters.js';
+import classInfo from '../FireEmblemData/ClassData/Classes.js';
 import { changeHandler } from '../functions/FormFunctions.jsx';
 const Form = (props) => {
     let { page } = props;
     const { characterInstance } = props;
     const { setCharacterInstance } = props;
-    const navigate  = useNavigate();
+    const navigate = useNavigate();
     const { id } = useParams();
     const unitData = characterData;
-    const unitClassData = classData;
+    const unitClassData = classInfo;
     const [errors, setErrors] = useState({});
     const { formErrors } = props;
     const { setFormErrors } = props;
@@ -36,7 +36,7 @@ const Form = (props) => {
             createCharacter(characterInstance)
                 .then((res) => {
                     console.log(res)
-                    navigate('/')
+                    navigate('/');
                 })
                 .catch((err) => {
                     console.log('ERROR: ', err);

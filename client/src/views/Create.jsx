@@ -15,7 +15,7 @@ const Create = () => {
         spd: "",
         def: "",
         res: "",
-        lck: "",
+        luck: "",
         isMale: true
     });
     const [formErrors, setFormErrors] = useState({
