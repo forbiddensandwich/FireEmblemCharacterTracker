@@ -11,7 +11,7 @@ class classGrowth {
         this.bld = bld;
     }
 }
-const dragonChildGrowths = new classGrowth(10, 10, 0, 15, 10, 10, 5, 5);
+const dragonChildGrowths = new classGrowth(10, 10, 0, 10,  15, 10, 10, 5, 5);
 const divineDragonGrowths = new classGrowth(10, 10, 0, 10, 15, 15, 15, 10, 5);
 const fellChildVeyleGrowths = new classGrowth(10, 10, 25, 10, 5, 10, 25, 0, 0);
 const nobleAlfredGrowths = new classGrowth(15, 15, 0, 5, 5, 20, 5, 15, 0);

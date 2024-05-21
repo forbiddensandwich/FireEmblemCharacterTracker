@@ -12,13 +12,13 @@
 import * as classInfo from "../ClassData/Classes";
 import * as characterGrowthRate from "./CharacterGrowths";
 class character {
-    constructor(name, baseClass, isMale, characterGrowthRate) {
+    constructor(name, baseClass, isMale, growthRate) {
         this.name = name;
         // this.baseLevel = baseLevel;
         this.baseClass = baseClass;
         this.isMale = isMale;
         // this.personalSkill = personalSkill;
-        this.characterGrowthRate = characterGrowthRate;
+        this.characterGrowthRate = growthRate;
         // this.characterStatCap = characterStatCap;
     }
     filterPotentialClasses(){

@@ -12,9 +12,9 @@ import {
     fellChildRafalGrowths, melusineGrowths, enchanterGrowths, mageCannoneerGrowths
 } from './ClassGrowthRates.js';
 class classData {
-    constructor(name, classGrowth, classCap, baseStats) {
+    constructor(name, growthRate, classCap, baseStats) {
         this.name = name;
-        this.classGrowth = classGrowth;
+        this.classGrowth = growthRate;
         this.classCap = classCap;
         this.baseStats = baseStats;
     }
