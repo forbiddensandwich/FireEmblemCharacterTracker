@@ -18,6 +18,78 @@ const DisplayInfo = () => {
     })
     const unit = CharacterData.filter(c => c.name == character.name);
     const classData = classInfo.filter(c => c.name == character.class);
+    const combinedGrowth = {
+        hp: 0,
+        str: 0,
+        mag: 0,
+        dex: 0,
+        spd: 0,
+        def: 0,
+        res: 0,
+        lck: 0,
+        bld: 0,
+        total: 0
+    }
+    const characterGrowth = {
+        hp: 0,
+        str: 0,
+        mag: 0,
+        dex: 0,
+        spd: 0,
+        def: 0,
+        res: 0,
+        lck: 0,
+        bld: 0,
+        total: 0
+    }
+    const classGrowth = {
+        hp: 0,
+        str: 0,
+        mag: 0,
+        dex: 0,
+        spd: 0,
+        def: 0,
+        res: 0,
+        lck: 0,
+        bld: 0,
+        total: 0
+    }
+    if (unit.length == 1) {
+        characterGrowth.hp = unit[0].characterGrowthRate.hp;
+        characterGrowth.str = unit[0].characterGrowthRate.str;
+        characterGrowth.mag = unit[0].characterGrowthRate.mag;
+        characterGrowth.dex = unit[0].characterGrowthRate.dex;
+        characterGrowth.spd = unit[0].characterGrowthRate.spd;
+        characterGrowth.def = unit[0].characterGrowthRate.def;
+        characterGrowth.res = unit[0].characterGrowthRate.res;
+        characterGrowth.lck = unit[0].characterGrowthRate.lck;
+        characterGrowth.bld = unit[0].characterGrowthRate.bld;
+        characterGrowth.total = characterGrowth.hp + characterGrowth.str + characterGrowth.mag + characterGrowth.dex + characterGrowth.spd + characterGrowth.def + characterGrowth.res + characterGrowth.lck + characterGrowth.bld;
+    }
+    if(classData.length == 1) {
+        classGrowth.hp = classData[0].classGrowth.hp;
+        classGrowth.str = classData[0].classGrowth.str;
+        classGrowth.mag = classData[0].classGrowth.mag;
+        classGrowth.dex = classData[0].classGrowth.dex;
+        classGrowth.spd = classData[0].classGrowth.spd;
+        classGrowth.def = classData[0].classGrowth.def;
+        classGrowth.res = classData[0].classGrowth.res;
+        classGrowth.lck = classData[0].classGrowth.lck;
+        classGrowth.bld = classData[0].classGrowth.bld;
+        classGrowth.total = classGrowth.hp + classGrowth.str + classGrowth.mag + classGrowth.dex + classGrowth.spd + classGrowth.def + classGrowth.res + classGrowth.lck + classGrowth.bld;
+    }
+    if (unit.length == 1 && classData.length == 1) {
+        combinedGrowth.hp = unit[0].characterGrowthRate.hp + classData[0].classGrowth.hp;
+        combinedGrowth.str = unit[0].characterGrowthRate.str + classData[0].classGrowth.str;
+        combinedGrowth.mag = unit[0].characterGrowthRate.mag + classData[0].classGrowth.mag;
+        combinedGrowth.dex = unit[0].characterGrowthRate.dex + classData[0].classGrowth.dex;
+        combinedGrowth.spd = unit[0].characterGrowthRate.spd + classData[0].classGrowth.spd;
+        combinedGrowth.def = unit[0].characterGrowthRate.def + classData[0].classGrowth.def;
+        combinedGrowth.res = unit[0].characterGrowthRate.res + classData[0].classGrowth.res;
+        combinedGrowth.lck = unit[0].characterGrowthRate.lck + classData[0].classGrowth.lck;
+        combinedGrowth.bld = unit[0].characterGrowthRate.bld + classData[0].classGrowth.bld;
+        combinedGrowth.total = characterGrowth.total + classGrowth.total;
+    }
     return (
         <>
             <div className='text-white fs-2'>
@@ -34,12 +106,11 @@ const DisplayInfo = () => {
                 <p>Dex: {character.dex}</p>
                 <p>Luck: {character.luck}</p>
                 <p>Spd: {character.spd}</p>
-                <p>Growth Rates:</p>
                 <div className='d-flex flex-column'>
                     <table className='table table-striped table-dark'>
                         <thead>
                             <tr>
-                                <td></td>
+                                <td>Growth Rates:</td>
                                 <td>HP</td>
                                 <td>Str</td>
                                 <td>Mag</td>
@@ -49,41 +120,54 @@ const DisplayInfo = () => {
                                 <td>Res</td>
                                 <td>Lck</td>
                                 <td>Bld</td>
+                                <td>Total</td>
                             </tr>
                         </thead>
                         <tbody>
                             {
-                                unit.map(c => (
-                                    <tr key={c.name}>
-                                        <td>Character Growth</td>
-                                        <td>{c.characterGrowthRate.hp}</td>
-                                        <td>{c.characterGrowthRate.str}</td>
-                                        <td>{c.characterGrowthRate.mag}</td>
-                                        <td>{c.characterGrowthRate.dex}</td>
-                                        <td>{c.characterGrowthRate.spd}</td>
-                                        <td>{c.characterGrowthRate.def}</td>
-                                        <td>{c.characterGrowthRate.res}</td>
-                                        <td>{c.characterGrowthRate.lck}</td>
-                                        <td>{c.characterGrowthRate.bld}</td>
-                                    </tr>
-                                ))
+                                <tr>
+                                    <td>Character Growth</td>
+                                    <td>{characterGrowth.hp}</td>
+                                    <td>{characterGrowth.str}</td>
+                                    <td>{characterGrowth.mag}</td>
+                                    <td>{characterGrowth.dex}</td>
+                                    <td>{characterGrowth.spd}</td>
+                                    <td>{characterGrowth.def}</td>
+                                    <td>{characterGrowth.res}</td>
+                                    <td>{characterGrowth.lck}</td>
+                                    <td>{characterGrowth.bld}</td>
+                                    <td>{characterGrowth.total}</td>
+                                </tr>
+
                             }
                             {
-                                classData.map(c => (
-                                    <tr key={c.name}>
+                                    <tr>
                                         <td>Class Growth</td>
-                                        <td>{c.classGrowth.hp}</td>
-                                        <td>{c.classGrowth.str}</td>
-                                        <td>{c.classGrowth.mag}</td>
-                                        <td>{c.classGrowth.dex}</td>
-                                        <td>{c.classGrowth.spd}</td>
-                                        <td>{c.classGrowth.def}</td>
-                                        <td>{c.classGrowth.res}</td>
-                                        <td>{c.classGrowth.lck}</td>
-                                        <td>{c.classGrowth.bld}</td>
+                                        <td>{classGrowth.hp}</td>
+                                        <td>{classGrowth.str}</td>
+                                        <td>{classGrowth.mag}</td>
+                                        <td>{classGrowth.dex}</td>
+                                        <td>{classGrowth.spd}</td>
+                                        <td>{classGrowth.def}</td>
+                                        <td>{classGrowth.res}</td>
+                                        <td>{classGrowth.lck}</td>
+                                        <td>{classGrowth.bld}</td>
+                                        <td>{classGrowth.total}</td>
                                     </tr>
-                                ))
                             }
+                            <tr>
+                                <td>Combined Growths</td>
+                                <td>{combinedGrowth.hp}</td>
+                                <td>{combinedGrowth.str}</td>
+                                <td>{combinedGrowth.mag}</td>
+                                <td>{combinedGrowth.dex}</td>
+                                <td>{combinedGrowth.spd}</td>
+                                <td>{combinedGrowth.def}</td>
+                                <td>{combinedGrowth.res}</td>
+                                <td>{combinedGrowth.lck}</td>
+                                <td>{combinedGrowth.bld}</td>
+                                <td>{combinedGrowth.total}</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
