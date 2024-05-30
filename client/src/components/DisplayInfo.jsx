@@ -54,6 +54,76 @@ const DisplayInfo = () => {
         bld: 0,
         total: 0
     }
+    const unitCap = {
+        hp: 0,
+        str: 0,
+        mag: 0,
+        dex: 0,
+        spd: 0,
+        def: 0,
+        res: 0,
+        lck: 0,
+        bld: 0,
+        total: 0
+    }
+    const classCap = {
+        hp: 0,
+        str: 0,
+        mag: 0,
+        dex: 0,
+        spd: 0,
+        def: 0,
+        res: 0,
+        lck: 0,
+        bld: 0,
+        total: 0
+    }
+    const combinedCaps = {
+        hp: 0,
+        str: 0,
+        mag: 0,
+        dex: 0,
+        spd: 0,
+        def: 0,
+        res: 0,
+        lck: 0,
+        bld: 0,
+        total: 0
+    }
+    if (unit.length == 1) {
+        unitCap.str = unit[0].characterStatCap.str
+        unitCap.mag = unit[0].characterStatCap.mag
+        unitCap.dex = unit[0].characterStatCap.dex
+        unitCap.spd = unit[0].characterStatCap.spd
+        unitCap.def = unit[0].characterStatCap.def
+        unitCap.res = unit[0].characterStatCap.res
+        unitCap.lck = unit[0].characterStatCap.lck
+        unitCap.total = unit[0].characterStatCap.str + unit[0].characterStatCap.mag + unit[0].characterStatCap.dex + unit[0].characterStatCap.spd + unit[0].characterStatCap.def + unit[0].characterStatCap.res + unit[0].characterStatCap.lck
+    }
+    if (classData.length == 1) {
+        classCap.hp = classData[0].classCap.hp;
+        classCap.str = classData[0].classCap.str;
+        classCap.mag = classData[0].classCap.mag;
+        classCap.dex = classData[0].classCap.dex;
+        classCap.spd = classData[0].classCap.spd;
+        classCap.def = classData[0].classCap.def;
+        classCap.res = classData[0].classCap.res;
+        classCap.lck = classData[0].classCap.lck;
+        classCap.bld = classData[0].classCap.bld;
+        classCap.total = classCap.hp + classCap.str + classCap.mag + classCap.dex + classCap.spd + classCap.def + classCap.res + classCap.lck + classCap.bld;
+    }
+    if (unit.length == 1 && classData.length == 1) {
+        combinedCaps.hp = classData[0].classCap.hp;
+        combinedCaps.str = unit[0].characterStatCap.str + classData[0].classCap.str;
+        combinedCaps.mag = unit[0].characterStatCap.mag + classData[0].classCap.mag;
+        combinedCaps.dex = unit[0].characterStatCap.dex + classData[0].classCap.dex;
+        combinedCaps.spd = unit[0].characterStatCap.spd + classData[0].classCap.spd;
+        combinedCaps.def = unit[0].characterStatCap.def + classData[0].classCap.def;
+        combinedCaps.res = unit[0].characterStatCap.res + classData[0].classCap.res;
+        combinedCaps.lck = unit[0].characterStatCap.lck + classData[0].classCap.lck;
+        combinedCaps.bld = classData[0].classCap.bld;
+        combinedCaps.total = unitCap.total + classCap.total;
+    }
     if (unit.length == 1) {
         characterGrowth.hp = unit[0].characterGrowthRate.hp;
         characterGrowth.str = unit[0].characterGrowthRate.str;
@@ -66,7 +136,7 @@ const DisplayInfo = () => {
         characterGrowth.bld = unit[0].characterGrowthRate.bld;
         characterGrowth.total = characterGrowth.hp + characterGrowth.str + characterGrowth.mag + characterGrowth.dex + characterGrowth.spd + characterGrowth.def + characterGrowth.res + characterGrowth.lck + characterGrowth.bld;
     }
-    if(classData.length == 1) {
+    if (classData.length == 1) {
         classGrowth.hp = classData[0].classGrowth.hp;
         classGrowth.str = classData[0].classGrowth.str;
         classGrowth.mag = classData[0].classGrowth.mag;
@@ -107,6 +177,64 @@ const DisplayInfo = () => {
                 <p>Luck: {character.luck}</p>
                 <p>Spd: {character.spd}</p>
                 <div className='d-flex flex-column'>
+                    <table className='table table-striped table-light'>
+                        <thead>
+                            <tr>
+                                <td>Stat Caps: </td>
+                                <td>HP: </td>
+                                <td>Str: </td>
+                                <td>Mag: </td>
+                                <td>Dex: </td>
+                                <td>Spd: </td>
+                                <td>Def: </td>
+                                <td>Res: </td>
+                                <td>Lck: </td>
+                                <td>Bld: </td>
+                                <td>Total: </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Unit Modifiers: </td>
+                                <td>{unitCap.hp}</td>
+                                <td>{unitCap.str}</td>
+                                <td>{unitCap.mag}</td>
+                                <td>{unitCap.dex}</td>
+                                <td>{unitCap.spd}</td>
+                                <td>{unitCap.def}</td>
+                                <td>{unitCap.res}</td>
+                                <td>{unitCap.lck}</td>
+                                <td>{unitCap.bld}</td>
+                                <td>{unitCap.total}</td>
+                            </tr>
+                            <tr>
+                                <td>Class Caps: </td>
+                                <td>{classCap.hp}</td>
+                                <td>{classCap.str}</td>
+                                <td>{classCap.mag}</td>
+                                <td>{classCap.dex}</td>
+                                <td>{classCap.spd}</td>
+                                <td>{classCap.def}</td>
+                                <td>{classCap.res}</td>
+                                <td>{classCap.lck}</td>
+                                <td>{classCap.bld}</td>
+                                <td>{classCap.total}</td>
+                            </tr>
+                            <tr>
+                                <td>Combined Caps: </td>
+                                <td>{combinedCaps.hp}</td>
+                                <td>{combinedCaps.str}</td>
+                                <td>{combinedCaps.mag}</td>
+                                <td>{combinedCaps.dex}</td>
+                                <td>{combinedCaps.spd}</td>
+                                <td>{combinedCaps.def}</td>
+                                <td>{combinedCaps.res}</td>
+                                <td>{combinedCaps.lck}</td>
+                                <td>{combinedCaps.bld}</td>
+                                <td>{combinedCaps.total}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                     <table className='table table-striped table-dark'>
                         <thead>
                             <tr>
@@ -141,19 +269,19 @@ const DisplayInfo = () => {
 
                             }
                             {
-                                    <tr>
-                                        <td>Class Growth</td>
-                                        <td>{classGrowth.hp}</td>
-                                        <td>{classGrowth.str}</td>
-                                        <td>{classGrowth.mag}</td>
-                                        <td>{classGrowth.dex}</td>
-                                        <td>{classGrowth.spd}</td>
-                                        <td>{classGrowth.def}</td>
-                                        <td>{classGrowth.res}</td>
-                                        <td>{classGrowth.lck}</td>
-                                        <td>{classGrowth.bld}</td>
-                                        <td>{classGrowth.total}</td>
-                                    </tr>
+                                <tr>
+                                    <td>Class Growth</td>
+                                    <td>{classGrowth.hp}</td>
+                                    <td>{classGrowth.str}</td>
+                                    <td>{classGrowth.mag}</td>
+                                    <td>{classGrowth.dex}</td>
+                                    <td>{classGrowth.spd}</td>
+                                    <td>{classGrowth.def}</td>
+                                    <td>{classGrowth.res}</td>
+                                    <td>{classGrowth.lck}</td>
+                                    <td>{classGrowth.bld}</td>
+                                    <td>{classGrowth.total}</td>
+                                </tr>
                             }
                             <tr>
                                 <td>Combined Growths</td>

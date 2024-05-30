@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { getAllCharacters } from '../services/CharacterService';
 import { Link } from 'react-router-dom';
-
+import { female, veyle } from '../FireEmblemData/CharacterData/AvailableClasses';
+console.log(female)
+console.log(veyle)
+console.log(female)
 const CharacterTable = () => {
     const [characters, setCharacters] = useState([]);
     useEffect(() => {
@@ -13,7 +16,7 @@ const CharacterTable = () => {
             .catch((err) => {
                 console.log(err);
             }, [])
-    })    
+    })
     return (
         <div className='d-flex flex-column'>
             <table className='table table-striped table-dark'>
